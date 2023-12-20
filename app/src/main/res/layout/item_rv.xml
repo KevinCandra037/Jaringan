@@ -17,7 +17,6 @@
         android:id="@+id/tv_meal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MEAL"
-        android:textColor="#525252" />
+        android:text="MEAL"/>
 
 </LinearLayout>

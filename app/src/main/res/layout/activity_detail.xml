@@ -3,9 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/material_dynamic_primary90"
     tools:context=".DetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondary"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/baseline_arrow_back_white_24"/>
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -38,7 +46,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Name"
-                android:textColor="#363636"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -48,8 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:lineSpacingExtra="8dp"
-                android:text="Description"
-                android:textColor="#363636" />
+                android:text="Description"/>
 
         </LinearLayout>
 

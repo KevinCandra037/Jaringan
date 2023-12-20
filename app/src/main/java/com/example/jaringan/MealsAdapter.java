@@ -3,7 +3,6 @@ package com.example.jaringan;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -15,8 +14,8 @@ import com.example.jaringan.databinding.ItemRvBinding;
 import java.util.List;
 
 class MealsAdapter extends RecyclerView.Adapter<MealsAdapter.GridViewHolder> {
-    private List<Meal> meals;
-    private Context context;
+    private final List<Meal> meals;
+    private final Context context;
     private ItemRvBinding itemRvBinding;
 
     public MealsAdapter(Context context, List<Meal> meals) {
@@ -46,14 +45,11 @@ class MealsAdapter extends RecyclerView.Adapter<MealsAdapter.GridViewHolder> {
                 .placeholder(R.drawable.baseline_image_search_24)
                 .into(itemRvBinding.imgMeal);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(context, DetailActivity.class);
-                i.putExtra("i_idMeal", id);
-                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(i);
-            }
+        holder.itemView.setOnClickListener(v -> {
+            Intent i = new Intent(context, DetailActivity.class);
+            i.putExtra("i_idMeal", id);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(i);
         });
 
         holder.setIsRecyclable(false);
